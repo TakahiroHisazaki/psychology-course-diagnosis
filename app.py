@@ -283,6 +283,7 @@ body {
     margin: 0 auto !important;
     padding-bottom: 60px !important;
     color: var(--ink);
+    font-size: 17px !important;
 }
 
 .hero {
@@ -358,19 +359,35 @@ body {
 }
 
 .mini-course {
-    min-height: 126px;
-    padding: 16px 12px;
+    min-height: 138px;
+    padding: 18px 14px;
     border-radius: 20px;
     text-align: center;
-    background: rgba(255,255,255,.86);
-    border: 1px solid rgba(255,255,255,.9);
-    box-shadow: 0 10px 28px rgba(67, 70, 120, .10);
+    background: #ffffff;
+    border: 2px solid #dfe3ef;
+    box-shadow: 0 10px 28px rgba(67, 70, 120, .12);
 }
 
-.mini-a { border-top: 5px solid #ff7899; }
-.mini-b { border-top: 5px solid #28b7a5; }
-.mini-c { border-top: 5px solid #ffad45; }
-.mini-d { border-top: 5px solid #6b7bf3; }
+.mini-a {
+    background: #fff1f5;
+    border-color: #ff8ba7;
+    border-top: 7px solid #e83e68;
+}
+.mini-b {
+    background: #eafbf7;
+    border-color: #62cdbf;
+    border-top: 7px solid #078579;
+}
+.mini-c {
+    background: #fff7e8;
+    border-color: #ffc46e;
+    border-top: 7px solid #c96800;
+}
+.mini-d {
+    background: #f0f1ff;
+    border-color: #9fa9ff;
+    border-top: 7px solid #4f5fd5;
+}
 
 .mini-icon {
     font-size: 1.8rem;
@@ -379,20 +396,35 @@ body {
 
 .mini-code {
     display: inline-block;
-    min-width: 28px;
-    padding: 2px 9px;
-    margin-bottom: 6px;
+    min-width: 34px;
+    padding: 4px 11px;
+    margin-bottom: 7px;
     border-radius: 999px;
-    background: #f0efff;
-    font-weight: 900;
-    color: #6258c7;
+    background: #ffffff;
+    border: 2px solid currentColor;
+    font-size: 1rem;
+    font-weight: 950;
+    color: #4c3fb7;
 }
 
 .mini-title {
-    font-size: .89rem;
-    font-weight: 800;
+    font-size: 1.08rem;
+    font-weight: 950;
     line-height: 1.45;
+    letter-spacing: .01em;
 }
+
+.mini-a .mini-code,
+.mini-a .mini-title { color: #9f1239; }
+
+.mini-b .mini-code,
+.mini-b .mini-title { color: #05685f; }
+
+.mini-c .mini-code,
+.mini-c .mini-title { color: #9a4b00; }
+
+.mini-d .mini-code,
+.mini-d .mini-title { color: #303fa8; }
 
 .section-lead {
     margin: 22px 0 12px;
@@ -400,13 +432,16 @@ body {
 }
 
 .section-lead h2 {
-    margin: 0 0 5px;
-    font-size: 1.42rem;
+    margin: 0 0 7px;
+    font-size: 1.62rem;
+    color: #27304a;
 }
 
 .section-lead p {
     margin: 0;
-    color: var(--muted);
+    color: #4f5b78;
+    font-size: 1.02rem;
+    font-weight: 650;
 }
 
 .question-card {
@@ -452,18 +487,32 @@ body {
 }
 
 .question-text {
-    padding-top: 3px;
-    font-size: 1.04rem;
-    font-weight: 850;
-    line-height: 1.55;
+    padding-top: 2px;
+    font-size: 1.18rem;
+    font-weight: 900;
+    line-height: 1.6;
+    color: #202942;
 }
 
 .question-card label {
     border-radius: 13px !important;
+    color: #202942 !important;
+    font-size: 1.06rem !important;
+    font-weight: 650 !important;
+    line-height: 1.65 !important;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+}
+
+.question-card label span,
+.question-card label p {
+    color: #202942 !important;
+    font-size: 1.06rem !important;
+    line-height: 1.65 !important;
 }
 
 .question-card label:hover {
-    background: #f8f6ff !important;
+    background: #f0edff !important;
 }
 
 .action-row {
@@ -471,15 +520,21 @@ body {
 }
 
 #diagnose-btn {
-    min-height: 54px;
+    min-height: 60px;
     border: none !important;
     border-radius: 16px !important;
-    font-size: 1.08rem !important;
-    font-weight: 900 !important;
-    color: white !important;
-    background: linear-gradient(135deg, #ff6f91 0%, #8c6ff1 56%, #4e8de8 100%) !important;
-    box-shadow: 0 12px 25px rgba(113, 91, 214, .28) !important;
+    font-size: 1.18rem !important;
+    font-weight: 950 !important;
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #e74270 0%, #7254d6 56%, #2674c9 100%) !important;
+    box-shadow: 0 12px 25px rgba(113, 91, 214, .30) !important;
     transition: transform .18s ease, box-shadow .18s ease;
+}
+
+#diagnose-btn * {
+    color: #ffffff !important;
+    font-size: 1.18rem !important;
+    font-weight: 950 !important;
 }
 
 #diagnose-btn:hover {
@@ -488,10 +543,32 @@ body {
 }
 
 #reset-btn {
-    min-height: 54px;
+    min-height: 60px;
+    border: 3px solid #334155 !important;
     border-radius: 16px !important;
-    font-weight: 800 !important;
-    background: rgba(255,255,255,.88) !important;
+    color: #172033 !important;
+    background: #ffffff !important;
+    font-size: 1.18rem !important;
+    font-weight: 950 !important;
+    box-shadow: 0 8px 20px rgba(35, 48, 73, .16) !important;
+    transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+#reset-btn * {
+    color: #172033 !important;
+    font-size: 1.18rem !important;
+    font-weight: 950 !important;
+}
+
+#reset-btn:hover {
+    transform: translateY(-2px);
+    background: #e9ecf5 !important;
+    border-color: #172033 !important;
+    box-shadow: 0 12px 24px rgba(35, 48, 73, .22) !important;
+}
+
+#reset-btn:hover * {
+    color: #111827 !important;
 }
 
 .notice {
@@ -626,43 +703,58 @@ body {
 }
 
 .result-card h2 {
-    margin: 3px 0 2px;
-    font-size: clamp(1.35rem, 4vw, 1.95rem);
+    margin: 4px 0 4px;
+    font-size: clamp(1.7rem, 4.5vw, 2.35rem);
+    font-weight: 950;
+    line-height: 1.35;
 }
+
+.result-a h2 { color: #9f1239; }
+.result-b h2 { color: #05685f; }
+.result-c h2 { color: #9a4b00; }
+.result-d h2 { color: #303fa8; }
 
 .result-headline {
     margin: 0;
-    color: var(--muted);
-    font-weight: 750;
+    color: #4b5671;
+    font-size: 1.08rem;
+    font-weight: 850;
 }
 
 .result-type {
     display: inline-block;
-    margin: 20px 0 8px;
-    padding: 9px 14px;
+    margin: 20px 0 10px;
+    padding: 10px 15px;
     border-radius: 13px;
-    color: #4f467f;
-    background: #f7f5ff;
-    font-weight: 850;
+    color: #3f376d;
+    background: #eeeafd;
+    font-size: 1.05rem;
+    font-weight: 900;
 }
 
 .result-card p {
-    line-height: 1.85;
+    color: #27304a;
+    font-size: 1.05rem;
+    line-height: 1.9;
 }
 
 .career-box {
     position: relative;
     z-index: 1;
-    padding: 15px 17px;
+    padding: 17px 19px;
     border-radius: 15px;
-    line-height: 1.75;
-    background: #f7f9ff;
-    border: 1px solid #e7eafa;
+    color: #26324c;
+    font-size: 1.03rem;
+    line-height: 1.8;
+    background: #f4f7ff;
+    border: 2px solid #dce3f5;
 }
 
 .result-score {
-    margin-top: 14px;
-    font-size: 1rem;
+    margin-top: 15px;
+    color: #27304a;
+    font-size: 1.12rem;
+    font-weight: 750;
 }
 
 .score-section {
@@ -713,32 +805,40 @@ body {
 .score-d .score-letter { background: #6b7bf3; }
 
 .score-number {
-    font-size: 1.2rem;
+    font-size: 1.38rem;
     font-weight: 950;
+    color: #202942;
 }
 
 .score-course {
-    color: var(--muted);
-    font-size: .74rem;
-    line-height: 1.25;
+    font-size: .9rem;
+    font-weight: 900;
+    line-height: 1.35;
 }
+
+.score-a .score-course { color: #9f1239; }
+.score-b .score-course { color: #05685f; }
+.score-c .score-course { color: #9a4b00; }
+.score-d .score-course { color: #303fa8; }
 
 .disclaimer {
     margin: 18px 4px 0;
-    color: var(--muted);
-    font-size: .83rem;
-    line-height: 1.65;
+    color: #4f5b78;
+    font-size: .94rem;
+    font-weight: 600;
+    line-height: 1.75;
     text-align: center;
 }
 
 .footer-note {
     margin-top: 28px;
-    padding: 15px;
+    padding: 16px;
     border-radius: 16px;
     text-align: center;
-    color: #6d7184;
-    background: rgba(255,255,255,.56);
-    font-size: .85rem;
+    color: #4f5b78;
+    background: rgba(255,255,255,.72);
+    font-size: .98rem;
+    font-weight: 650;
 }
 
 @media (max-width: 760px) {
@@ -788,14 +888,14 @@ body {
 # =========================================================
 # 6. Gradio画面
 # =========================================================
+APP_THEME = gr.themes.Soft(
+    primary_hue="violet",
+    secondary_hue="pink",
+    neutral_hue="slate",
+)
+
 with gr.Blocks(
     title="心理臨床学科 コース適性診断テスト",
-    theme=gr.themes.Soft(
-        primary_hue="violet",
-        secondary_hue="pink",
-        neutral_hue="slate",
-    ),
-    css=CSS,
 ) as demo:
     gr.HTML(
         """
@@ -884,9 +984,13 @@ if __name__ == "__main__":
         demo.launch(
             share=True,
             debug=True,
+            theme=APP_THEME,
+            css=CSS,
         )
     else:
         demo.launch(
             server_name="0.0.0.0",
             server_port=int(os.getenv("PORT", "7860")),
+            theme=APP_THEME,
+            css=CSS,
         )
