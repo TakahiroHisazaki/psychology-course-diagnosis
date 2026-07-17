@@ -63,7 +63,7 @@ COURSES = {
     "A": {
         "course": "心理学コース",
         "headline": "公認心理師のたまご",
-        "type": "人の心に深く向き合う専門家タイプ",
+        "type": "人の心に深く向き合う専門家",
         "icon": "🫶",
         "description": (
             "学校や病院などで、悩みを抱える一人ひとりの話をじっくり聴き、"
@@ -79,7 +79,7 @@ COURSES = {
     "B": {
         "course": "精神保健福祉コース",
         "headline": "精神保健福祉士のたまご",
-        "type": "その人らしい生き方と生活を支えるコーディネータータイプ",
+        "type": "その人らしい生き方と生活を支えるコーディネーター",
         "icon": "🤝",
         "description": (
             "様々な困難を抱えている人の思いを大事にしながら、医療や福祉の専門知識を活かして、"
@@ -96,7 +96,7 @@ COURSES = {
     "C": {
         "course": "人間科学コース（心理学）",
         "headline": "快適づくりのたまご",
-        "type": "人の行動を分析し、よりよい環境をつくるプランナータイプ",
+        "type": "人の行動を分析し、よりよい環境をつくるプランナー",
         "icon": "💡",
         "description": (
             "悩んでいる人を支える仕事よりも、「毎日をもっと快適にする」仕事にワクワクするタイプです。"
@@ -112,7 +112,7 @@ COURSES = {
     "D": {
         "course": "人間科学コース（ソーシャルワーク）",
         "headline": "コミュニティづくりのたまご",
-        "type": "人と人をつなぎ、安心の輪を広げるプランナータイプ",
+        "type": "人と人をつなぎ、安心の輪を広げるプランナー",
         "icon": "🌏",
         "description": (
             "普段の街づくりから、もしもの災害時の現場までフットワーク軽く飛び込み、"
@@ -912,6 +912,895 @@ body {
         font-size: 1.8rem;
     }
 }
+
+/* =========================================================
+   高校生向け・明るい高コントラストデザイン
+   文章や診断ロジックは変更せず、表示デザインのみ上書き
+   ========================================================= */
+
+:root {
+    --bright-ink: #17213d;
+    --bright-navy: #172554;
+    --bright-muted: #43506d;
+    --bright-pink: #d91f5d;
+    --bright-green: #087f6f;
+    --bright-orange: #bd5b00;
+    --bright-blue: #3548b8;
+    --bright-purple: #6941c6;
+    --bright-yellow: #ffd84d;
+    --bright-white: #ffffff;
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 7% 7%, rgba(255, 215, 75, .48), transparent 24%),
+        radial-gradient(circle at 93% 11%, rgba(255, 105, 150, .30), transparent 27%),
+        radial-gradient(circle at 87% 85%, rgba(70, 174, 255, .24), transparent 29%),
+        radial-gradient(circle at 10% 90%, rgba(63, 211, 170, .23), transparent 26%),
+        linear-gradient(135deg, #fffdf1 0%, #fff4fa 34%, #f6f4ff 67%, #eefaff 100%) !important;
+}
+
+.gradio-container {
+    max-width: 1140px !important;
+    padding: 0 18px 76px !important;
+    color: var(--bright-ink) !important;
+    font-size: 1.08rem !important;
+    line-height: 1.78 !important;
+}
+
+/* タイトル */
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 48px 32px 43px !important;
+    border: 4px solid rgba(255,255,255,.94) !important;
+    border-radius: 32px !important;
+    color: #ffffff !important;
+    background:
+        linear-gradient(130deg, rgba(255,255,255,.14), transparent 42%),
+        linear-gradient(135deg, #f2386e 0%, #e74d9a 31%, #8756da 63%, #247bd7 100%) !important;
+    box-shadow:
+        0 23px 50px rgba(103, 68, 179, .31),
+        inset 0 1px 0 rgba(255,255,255,.38) !important;
+}
+
+.hero::before {
+    content: "🧠" !important;
+    position: absolute !important;
+    top: 18px !important;
+    left: 25px !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    background: none !important;
+    font-size: clamp(2.8rem, 6vw, 4.6rem) !important;
+    opacity: .25 !important;
+    transform: rotate(-12deg);
+}
+
+.hero::after {
+    content: "🚀" !important;
+    position: absolute !important;
+    right: 25px !important;
+    bottom: 15px !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    background: none !important;
+    font-size: clamp(2.8rem, 6vw, 4.5rem) !important;
+    opacity: .30 !important;
+    transform: rotate(10deg);
+}
+
+.hero-kicker {
+    padding: 9px 19px !important;
+    border: 2px solid rgba(255,255,255,.88) !important;
+    color: #ffffff !important;
+    background: rgba(49, 27, 107, .34) !important;
+    font-size: 1rem !important;
+    font-weight: 950 !important;
+}
+
+.hero-kicker::before {
+    content: "✨ ";
+}
+
+.hero-kicker::after {
+    content: " ✨";
+}
+
+.hero h1 {
+    margin: 17px 0 13px !important;
+    color: #ffffff !important;
+    font-size: clamp(2.25rem, 5.5vw, 3.45rem) !important;
+    font-weight: 950 !important;
+    line-height: 1.27 !important;
+    text-shadow: 0 3px 9px rgba(37, 19, 83, .38);
+}
+
+.hero p {
+    max-width: 860px !important;
+    color: #ffffff !important;
+    font-size: clamp(1.17rem, 2.5vw, 1.36rem) !important;
+    font-weight: 760 !important;
+    line-height: 1.93 !important;
+    text-shadow: 0 2px 6px rgba(37, 19, 83, .30);
+}
+
+.hero p strong {
+    margin-top: 9px !important;
+    padding: 7px 15px !important;
+    border: 2px solid rgba(255,255,255,.72);
+    color: #ffffff !important;
+    background: rgba(41, 24, 92, .36) !important;
+    font-size: 1.22rem !important;
+    font-weight: 950 !important;
+}
+
+/* 上部のコースカード */
+.course-overview {
+    gap: 16px !important;
+    margin-bottom: 30px !important;
+}
+
+.mini-course {
+    position: relative;
+    overflow: hidden;
+    min-height: 176px !important;
+    padding: 22px 16px 19px !important;
+    border: 3px solid !important;
+    border-radius: 25px !important;
+    box-shadow: 0 15px 32px rgba(57, 57, 111, .15) !important;
+    transition: transform .18s ease, box-shadow .18s ease !important;
+}
+
+.mini-course:hover {
+    transform: translateY(-5px) rotate(-.4deg);
+    box-shadow: 0 21px 40px rgba(57, 57, 111, .21) !important;
+}
+
+.mini-course::after {
+    content: "★";
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 1.35rem;
+    opacity: .44;
+}
+
+.mini-a {
+    color: #8e123b !important;
+    background: linear-gradient(145deg, #fffafd, #ffdeea) !important;
+    border-color: #e95682 !important;
+}
+
+.mini-b {
+    color: #05675d !important;
+    background: linear-gradient(145deg, #f7fffc, #ccefe6) !important;
+    border-color: #19a58f !important;
+}
+
+.mini-c {
+    color: #7a3c00 !important;
+    background: linear-gradient(145deg, #fffdf4, #ffe29a) !important;
+    border-color: #e99218 !important;
+}
+
+.mini-d {
+    color: #2b3a9b !important;
+    background: linear-gradient(145deg, #fbfbff, #dce2ff) !important;
+    border-color: #6676df !important;
+}
+
+.mini-icon {
+    font-size: 2.65rem !important;
+    line-height: 1 !important;
+    margin-bottom: 8px !important;
+    filter: drop-shadow(0 4px 4px rgba(37, 40, 78, .13));
+}
+
+.mini-code {
+    min-width: 44px !important;
+    padding: 4px 14px !important;
+    border: 3px solid currentColor !important;
+    color: inherit !important;
+    background: rgba(255,255,255,.94) !important;
+    font-size: 1.17rem !important;
+    font-weight: 950 !important;
+}
+
+.mini-title {
+    color: inherit !important;
+    font-size: 1.22rem !important;
+    font-weight: 950 !important;
+    line-height: 1.5 !important;
+}
+
+/* 教示カード */
+.section-lead {
+    position: relative;
+    overflow: hidden;
+    margin: 30px 0 20px !important;
+    padding: 25px 26px !important;
+    border: 3px solid #725bd1 !important;
+    border-radius: 25px !important;
+    color: var(--bright-navy) !important;
+    background:
+        linear-gradient(90deg, rgba(255, 218, 72, .25), transparent 34%),
+        linear-gradient(135deg, #ffffff 0%, #fbf6ff 59%, #edf7ff 100%) !important;
+    box-shadow: 0 15px 33px rgba(63, 55, 123, .15) !important;
+}
+
+.section-lead::before {
+    content: "🎯";
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.65rem;
+}
+
+.section-lead::after {
+    content: "✨";
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    font-size: 1.9rem;
+}
+
+.section-lead h2 {
+    margin: 0 62px 9px !important;
+    color: #1a2550 !important;
+    font-size: clamp(1.65rem, 3.5vw, 2.08rem) !important;
+    font-weight: 950 !important;
+    line-height: 1.45 !important;
+}
+
+.section-lead p {
+    margin-left: 62px !important;
+    margin-right: 62px !important;
+    color: #344165 !important;
+    font-size: clamp(1.15rem, 2.5vw, 1.3rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.78 !important;
+}
+
+.section-lead .diagnosis-guide {
+    padding: 12px 18px !important;
+    border: 3px solid #ad94eb !important;
+    color: #382579 !important;
+    background: #f2edff !important;
+    font-size: 1.15rem !important;
+    font-weight: 950 !important;
+}
+
+/* 質問カード */
+.question-card {
+    position: relative;
+    overflow: hidden;
+    padding: 23px 25px 19px !important;
+    margin: 18px 0 !important;
+    border: 3px solid !important;
+    border-radius: 26px !important;
+    background: #ffffff !important;
+    box-shadow: 0 15px 34px rgba(46, 52, 101, .14) !important;
+}
+
+.question-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 21px 42px rgba(46, 52, 101, .19) !important;
+}
+
+.question-card::before {
+    position: absolute;
+    right: 20px;
+    top: 11px;
+    font-size: 2.35rem;
+    opacity: .20;
+    pointer-events: none;
+}
+
+.question-a {
+    border-color: #e75c86 !important;
+    background: linear-gradient(150deg, #ffffff 56%, #ffedf4 100%) !important;
+}
+
+.question-b {
+    border-color: #20a790 !important;
+    background: linear-gradient(150deg, #ffffff 56%, #e7faf4 100%) !important;
+}
+
+.question-c {
+    border-color: #eb9824 !important;
+    background: linear-gradient(150deg, #ffffff 56%, #fff5d9 100%) !important;
+}
+
+.question-d {
+    border-color: #6574dc !important;
+    background: linear-gradient(150deg, #ffffff 56%, #ecefff 100%) !important;
+}
+
+.question-a::before { content: "🫶"; }
+.question-b::before { content: "🤝"; }
+.question-c::before { content: "💡"; }
+.question-d::before { content: "🌏"; }
+
+.question-title {
+    gap: 15px !important;
+    margin-bottom: 16px !important;
+    padding-right: 48px;
+}
+
+.question-number {
+    min-width: 74px !important;
+    height: auto !important;
+    min-height: 49px !important;
+    padding: 3px 16px !important;
+    border: 3px solid rgba(255,255,255,.87) !important;
+    border-radius: 16px !important;
+    color: #ffffff !important;
+    font-size: 1.4rem !important;
+    font-weight: 950 !important;
+    box-shadow: 0 8px 18px rgba(45, 43, 95, .23) !important;
+}
+
+.question-a .question-number {
+    background: #c92558 !important;
+}
+
+.question-b .question-number {
+    background: #087f6f !important;
+}
+
+.question-c .question-number {
+    background: #bf5d00 !important;
+}
+
+.question-d .question-number {
+    background: #3e50b9 !important;
+}
+
+.question-text {
+    padding-top: 3px !important;
+    color: #14203d !important;
+    font-size: clamp(1.31rem, 2.8vw, 1.54rem) !important;
+    font-weight: 950 !important;
+    line-height: 1.58 !important;
+}
+
+/* 回答選択肢 */
+.question-card label {
+    min-height: 59px !important;
+    margin: 8px 0 !important;
+    padding: 12px 15px !important;
+    border: 2px solid #d4dceb !important;
+    border-radius: 16px !important;
+    color: #17213d !important;
+    background: #ffffff !important;
+    box-shadow: 0 4px 10px rgba(48, 56, 100, .07) !important;
+    font-size: 1.19rem !important;
+    font-weight: 740 !important;
+    line-height: 1.78 !important;
+    transition: transform .14s ease, background .14s ease, border-color .14s ease !important;
+}
+
+.question-card label span,
+.question-card label p {
+    color: #17213d !important;
+    font-size: 1.19rem !important;
+    font-weight: 740 !important;
+    line-height: 1.78 !important;
+}
+
+.question-card label:hover {
+    transform: translateX(4px);
+    border-color: #8069d2 !important;
+    background: #f6f2ff !important;
+}
+
+.question-card label:has(input:checked) {
+    border: 3px solid #a95f00 !important;
+    color: #352300 !important;
+    background: linear-gradient(135deg, #fff9c8, #ffe785) !important;
+    box-shadow: 0 8px 18px rgba(190, 128, 0, .18) !important;
+}
+
+.question-card label:has(input:checked) span,
+.question-card label:has(input:checked) p {
+    color: #352300 !important;
+    font-weight: 950 !important;
+}
+
+/* 操作ボタン */
+.action-row {
+    gap: 16px !important;
+    margin-top: 28px !important;
+}
+
+#diagnose-btn {
+    min-height: 70px !important;
+    border: 3px solid #ffffff !important;
+    border-radius: 20px !important;
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #e82c62 0%, #a43bc0 48%, #2670cf 100%) !important;
+    box-shadow: 0 16px 30px rgba(105, 62, 179, .32) !important;
+    font-size: 1.38rem !important;
+    font-weight: 950 !important;
+}
+
+#diagnose-btn * {
+    color: #ffffff !important;
+    font-size: 1.38rem !important;
+    font-weight: 950 !important;
+}
+
+#diagnose-btn:hover {
+    transform: translateY(-3px) scale(1.01) !important;
+    filter: saturate(1.12);
+    box-shadow: 0 21px 38px rgba(105, 62, 179, .40) !important;
+}
+
+#reset-btn {
+    min-height: 70px !important;
+    border: 3px solid #25365f !important;
+    border-radius: 20px !important;
+    color: #17213d !important;
+    background: linear-gradient(135deg, #ffffff 0%, #eaf1ff 100%) !important;
+    box-shadow: 0 11px 24px rgba(35, 48, 73, .18) !important;
+    font-size: 1.34rem !important;
+    font-weight: 950 !important;
+}
+
+#reset-btn * {
+    color: #17213d !important;
+    font-size: 1.34rem !important;
+    font-weight: 950 !important;
+}
+
+#reset-btn:hover {
+    transform: translateY(-3px) !important;
+    border-color: #25365f !important;
+    color: #ffffff !important;
+    background: #334978 !important;
+    box-shadow: 0 16px 29px rgba(35, 48, 73, .28) !important;
+}
+
+#reset-btn:hover * {
+    color: #ffffff !important;
+}
+
+/* 未回答表示 */
+.notice {
+    gap: 19px !important;
+    padding: 24px !important;
+    margin-top: 28px !important;
+    border-radius: 22px !important;
+}
+
+.notice-warning {
+    color: #5e3000 !important;
+    border: 3px solid #eb9723 !important;
+    background: linear-gradient(135deg, #fffaf0, #ffe5ad) !important;
+    box-shadow: 0 14px 30px rgba(120, 83, 14, .14);
+}
+
+.notice-icon {
+    font-size: 2.75rem !important;
+}
+
+.notice h3 {
+    color: #5e3000 !important;
+    font-size: 1.43rem !important;
+    font-weight: 950 !important;
+}
+
+.notice p {
+    color: #5e3000 !important;
+    font-size: 1.15rem !important;
+    font-weight: 760 !important;
+}
+
+/* 診断結果 */
+.result-section {
+    margin-top: 37px !important;
+}
+
+.result-heading {
+    gap: 18px !important;
+    margin-bottom: 24px !important;
+    padding: 20px 23px !important;
+    border: 3px solid #735fd0;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #ffffff, #f2edff);
+    box-shadow: 0 15px 32px rgba(62, 51, 119, .14);
+}
+
+.result-heading > span {
+    font-size: 3.3rem !important;
+}
+
+.result-heading p {
+    color: #5639aa !important;
+    font-size: .98rem !important;
+    font-weight: 950 !important;
+}
+
+.result-heading h1 {
+    color: #1a2550 !important;
+    font-size: clamp(1.9rem, 4.4vw, 2.65rem) !important;
+    font-weight: 950 !important;
+    line-height: 1.36 !important;
+}
+
+.tie-message {
+    color: #344165 !important;
+    font-size: 1.12rem !important;
+    font-weight: 730 !important;
+    line-height: 1.75 !important;
+}
+
+.result-cards {
+    gap: 22px !important;
+}
+
+.result-card {
+    padding: 33px !important;
+    border: 4px solid !important;
+    border-radius: 29px !important;
+    background: #ffffff !important;
+    box-shadow: 0 19px 44px rgba(51, 55, 105, .18) !important;
+}
+
+.result-card::before {
+    content: "✨";
+    position: absolute;
+    top: 18px;
+    right: 21px;
+    font-size: 2.05rem;
+    opacity: .43;
+}
+
+.result-a {
+    border-color: #e45780 !important;
+    background: linear-gradient(145deg, #ffffff 64%, #ffedf4) !important;
+}
+
+.result-b {
+    border-color: #1fa58e !important;
+    background: linear-gradient(145deg, #ffffff 64%, #e7faf4) !important;
+}
+
+.result-c {
+    border-color: #e99420 !important;
+    background: linear-gradient(145deg, #ffffff 64%, #fff3d1) !important;
+}
+
+.result-d {
+    border-color: #6473d9 !important;
+    background: linear-gradient(145deg, #ffffff 64%, #ebeeff) !important;
+}
+
+.result-ribbon {
+    padding: 8px 17px !important;
+    border: 2px solid #8b72da;
+    color: #493092 !important;
+    background: #f2edff !important;
+    font-size: 1.03rem !important;
+    font-weight: 950 !important;
+}
+
+.result-main {
+    gap: 19px !important;
+}
+
+.result-icon {
+    width: 84px !important;
+    height: 84px !important;
+    border: 3px solid rgba(91, 71, 170, .20);
+    border-radius: 24px !important;
+    font-size: 2.85rem !important;
+    box-shadow: 0 8px 19px rgba(64, 50, 120, .13);
+}
+
+.result-code {
+    color: #533ba7 !important;
+    font-size: .98rem !important;
+    font-weight: 950 !important;
+}
+
+.result-card h2 {
+    font-size: clamp(2.05rem, 4.9vw, 2.82rem) !important;
+    font-weight: 950 !important;
+}
+
+.result-headline {
+    color: #35415f !important;
+    font-size: 1.27rem !important;
+    font-weight: 900 !important;
+    line-height: 1.52 !important;
+}
+
+.result-type {
+    margin: 23px 0 13px !important;
+    padding: 12px 17px !important;
+    border: 2px solid #b29de8;
+    color: #30215f !important;
+    background: #f2edff !important;
+    font-size: 1.22rem !important;
+    font-weight: 950 !important;
+}
+
+.result-card p {
+    color: #1d2945 !important;
+    font-size: 1.2rem !important;
+    font-weight: 630 !important;
+    line-height: 1.98 !important;
+}
+
+.career-box {
+    padding: 21px 22px !important;
+    border: 3px solid #c6d3ec !important;
+    border-radius: 18px !important;
+    color: #1d2945 !important;
+    background: #f6f9ff !important;
+    font-size: 1.18rem !important;
+    font-weight: 660 !important;
+    line-height: 1.92 !important;
+}
+
+.career-box strong {
+    color: #17275a !important;
+    font-size: 1.22rem !important;
+    font-weight: 950 !important;
+}
+
+.result-score {
+    margin-top: 18px !important;
+    color: #17213d !important;
+    font-size: 1.3rem !important;
+    font-weight: 880 !important;
+}
+
+/* 回答バランス */
+.score-section {
+    margin-top: 27px !important;
+    padding: 26px !important;
+    border: 3px solid #7480d5;
+    border-radius: 26px !important;
+    background: linear-gradient(135deg, #ffffff, #f3f6ff) !important;
+    box-shadow: 0 14px 31px rgba(57, 62, 116, .13) !important;
+}
+
+.score-section h3 {
+    color: #1a2550 !important;
+    font-size: 1.64rem !important;
+    font-weight: 950 !important;
+}
+
+.score-grid {
+    gap: 14px !important;
+}
+
+.score-badge {
+    min-height: 88px;
+    padding: 16px !important;
+    border: 3px solid !important;
+    border-radius: 19px !important;
+    box-shadow: 0 8px 17px rgba(51, 58, 108, .10);
+}
+
+.score-a {
+    border-color: #e45780 !important;
+    background: #fff5f8 !important;
+}
+
+.score-b {
+    border-color: #1fa58e !important;
+    background: #effbf7 !important;
+}
+
+.score-c {
+    border-color: #e99420 !important;
+    background: #fff9ed !important;
+}
+
+.score-d {
+    border-color: #6473d9 !important;
+    background: #f4f5ff !important;
+}
+
+.score-letter {
+    width: 49px !important;
+    height: 49px !important;
+    border-radius: 15px !important;
+    color: #ffffff !important;
+    font-size: 1.31rem !important;
+    font-weight: 950 !important;
+}
+
+.score-a .score-letter { background: #c62558 !important; }
+.score-b .score-letter { background: #087f6f !important; }
+.score-c .score-letter { background: #bf5d00 !important; }
+.score-d .score-letter { background: #3e50b9 !important; }
+
+.score-number {
+    color: #17213d !important;
+    font-size: 1.68rem !important;
+    font-weight: 950 !important;
+}
+
+.score-course {
+    font-size: 1.04rem !important;
+    font-weight: 950 !important;
+    line-height: 1.42 !important;
+}
+
+.disclaimer {
+    margin-top: 22px !important;
+    padding: 17px 19px;
+    border: 2px dashed #858eb1;
+    border-radius: 16px;
+    color: #344165 !important;
+    background: rgba(255,255,255,.86);
+    font-size: 1.08rem !important;
+    font-weight: 710 !important;
+    line-height: 1.82 !important;
+}
+
+/* フッター */
+.footer-note {
+    position: relative;
+    margin-top: 33px !important;
+    padding: 21px 25px !important;
+    border: 3px solid #d99a26;
+    border-radius: 21px !important;
+    color: #4b3300 !important;
+    background: linear-gradient(135deg, #fffdf3, #ffebb1) !important;
+    box-shadow: 0 12px 27px rgba(119, 87, 17, .13);
+    font-size: 1.14rem !important;
+    font-weight: 820 !important;
+    line-height: 1.8 !important;
+}
+
+.footer-note::before {
+    content: "🎓 ";
+    font-size: 1.45rem;
+}
+
+.footer-note::after {
+    content: " 🌟";
+    font-size: 1.45rem;
+}
+
+/* タブレット */
+@media (max-width: 820px) {
+    html {
+        font-size: 17px;
+    }
+
+    .course-overview,
+    .score-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .hero {
+        padding: 39px 21px 37px !important;
+    }
+
+    .section-lead::before {
+        left: 14px;
+        font-size: 2.05rem;
+    }
+
+    .section-lead::after {
+        right: 14px;
+        font-size: 1.45rem;
+    }
+
+    .section-lead h2,
+    .section-lead p {
+        margin-left: 44px !important;
+        margin-right: 38px !important;
+    }
+
+    .question-card,
+    .result-card {
+        padding-left: 19px !important;
+        padding-right: 19px !important;
+    }
+}
+
+/* スマートフォン */
+@media (max-width: 520px) {
+    html {
+        font-size: 16px;
+    }
+
+    .gradio-container {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .course-overview,
+    .score-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .hero::before,
+    .hero::after {
+        opacity: .15 !important;
+    }
+
+    .section-lead {
+        padding: 22px 15px !important;
+    }
+
+    .section-lead::before,
+    .section-lead::after {
+        display: none;
+    }
+
+    .section-lead h2,
+    .section-lead p {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .question-title {
+        gap: 11px !important;
+        padding-right: 0;
+    }
+
+    .question-card::before {
+        display: none;
+    }
+
+    .question-number {
+        min-width: 63px !important;
+        min-height: 45px !important;
+        font-size: 1.24rem !important;
+    }
+
+    .question-card label,
+    .question-card label span,
+    .question-card label p {
+        font-size: 1.1rem !important;
+    }
+
+    .action-row {
+        flex-direction: column;
+    }
+
+    .result-heading {
+        align-items: flex-start !important;
+        padding: 18px !important;
+    }
+
+    .result-heading > span {
+        font-size: 2.6rem !important;
+    }
+
+    .result-main {
+        align-items: flex-start !important;
+        gap: 14px !important;
+    }
+
+    .result-icon {
+        width: 67px !important;
+        height: 67px !important;
+        font-size: 2.2rem !important;
+    }
+
+    .result-card {
+        padding: 25px 19px !important;
+    }
+}
+
 """
 
 
