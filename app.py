@@ -192,7 +192,7 @@ def result_card_html(code, score):
 # 4. 診断処理
 # =========================================================
 def diagnose(q1, q2, q3, q4):
-    """4つの回答を集計し、最多コースを表示する。同点なら複数候補を表示する。"""
+    """4つの回答を集計し、最多コースを表示する。同点なら迷っている複数候補を表示する。"""
     answers = [q1, q2, q3, q4]
 
     if any(answer is None for answer in answers):
@@ -213,6 +213,8 @@ def diagnose(q1, q2, q3, q4):
     max_score = max(scores.values())
     winners = [code for code in "ABCD" if scores[code] == max_score]
 
+    tie_guidance = ""
+
     if len(winners) == 1:
         heading = """
         <div class="result-heading">
@@ -224,18 +226,60 @@ def diagnose(q1, q2, q3, q4):
         </div>
         """
     else:
-        heading = """
+        winner_course_names = [
+            html.escape(COURSES[code]["course"]) for code in winners
+        ]
+
+        if len(winner_course_names) == 2:
+            course_text = "と".join(winner_course_names)
+        else:
+            course_text = "・".join(winner_course_names)
+
+        heading = f"""
         <div class="result-heading">
             <span>🌈</span>
             <div>
                 <p>DIAGNOSIS RESULT</p>
-                <h1>診断結果：複数のコースが候補です</h1>
+                <h1>診断結果：{course_text}の間で迷っているようです</h1>
                 <div class="tie-message">
-                    選択数が同点だったため、複数のコースがあなたの未来のヒントになりました。
+                    選択数が同点だったため、これらの複数コースに同じくらい関心があることが結果に表れています。
                     それぞれの授業内容や資格も比べてみましょう。
                 </div>
             </div>
         </div>
+        """
+
+        tie_guidance = """
+        <section class="tie-guidance">
+            <div class="tie-guidance-icon">🌱</div>
+            <div class="tie-guidance-body">
+                <h2>迷っている今も、大切な進路選びの途中です</h2>
+
+                <div class="tie-guidance-point">
+                    <span>😊</span>
+                    <p>
+                        <strong>今、迷っていても全然大丈夫です。</strong>
+                        進路について迷うことは、自分の興味や将来を丁寧に考えている証拠でもあります。
+                    </p>
+                </div>
+
+                <div class="tie-guidance-point">
+                    <span>🎓</span>
+                    <p>
+                        <strong>入学後に学びながら、自分に合うコースを選択しても大丈夫です。</strong>
+                        授業やさまざまな体験を通して、関心がよりはっきりしてくることがあります。
+                    </p>
+                </div>
+
+                <div class="tie-guidance-point">
+                    <span>🧠</span>
+                    <p>
+                        人を直接支援するかどうか、人の役に立つ仕事を目指すかどうかにかかわらず、
+                        <strong>人間の心や社会・環境に関心がある人には、心理臨床学科への入学をおすすめします。</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
         """
 
     result_cards = "".join(result_card_html(code, scores[code]) for code in winners)
@@ -243,6 +287,7 @@ def diagnose(q1, q2, q3, q4):
     return f"""
     <section class="result-section">
         {heading}
+        {tie_guidance}
         <div class="result-cards">{result_cards}</div>
 
         <div class="score-section">
@@ -256,7 +301,6 @@ def diagnose(q1, q2, q3, q4):
         </div>
     </section>
     """
-
 
 def reset_answers():
     return None, None, None, None, ""
@@ -2334,6 +2378,110 @@ html {
     .disclaimer,
     .footer-note {
         font-size: 0.82rem !important;
+    }
+}
+
+
+/* =========================================================
+   同率時の「迷っている」診断コメント
+   ========================================================= */
+
+.tie-guidance {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 0 0 22px;
+    padding: 21px 22px;
+    border: 3px solid #46a88f;
+    border-radius: 22px;
+    color: #173f39;
+    background:
+        linear-gradient(135deg, rgba(255,255,255,.92), rgba(232,255,247,.95)),
+        linear-gradient(90deg, #fff8ce, #e6fff6);
+    box-shadow: 0 13px 29px rgba(39, 117, 97, .14);
+}
+
+.tie-guidance-icon {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border: 2px solid #69bba7;
+    border-radius: 17px;
+    background: #ffffff;
+    font-size: 1.8rem;
+    box-shadow: 0 6px 14px rgba(39, 117, 97, .12);
+}
+
+.tie-guidance-body {
+    min-width: 0;
+}
+
+.tie-guidance h2 {
+    margin: 1px 0 12px;
+    color: #155e54 !important;
+    font-size: 1.13rem !important;
+    font-weight: 950 !important;
+    line-height: 1.45 !important;
+}
+
+.tie-guidance-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin: 9px 0;
+    padding: 10px 12px;
+    border: 1px solid #b9e3d8;
+    border-radius: 13px;
+    background: rgba(255,255,255,.78);
+}
+
+.tie-guidance-point > span {
+    flex: 0 0 auto;
+    padding-top: 1px;
+    font-size: 1.08rem;
+}
+
+.tie-guidance-point p {
+    margin: 0 !important;
+    color: #23453f !important;
+    font-size: 0.94rem !important;
+    font-weight: 650 !important;
+    line-height: 1.7 !important;
+}
+
+.tie-guidance-point strong {
+    color: #124f47 !important;
+    font-weight: 950 !important;
+}
+
+@media (max-width: 520px) {
+    .tie-guidance {
+        gap: 11px;
+        padding: 17px 15px;
+    }
+
+    .tie-guidance-icon {
+        width: 43px;
+        height: 43px;
+        border-radius: 14px;
+        font-size: 1.45rem;
+    }
+
+    .tie-guidance h2 {
+        font-size: 1rem !important;
+    }
+
+    .tie-guidance-point {
+        gap: 7px;
+        padding: 9px 10px;
+    }
+
+    .tie-guidance-point p {
+        font-size: 0.88rem !important;
+        line-height: 1.62 !important;
     }
 }
 
