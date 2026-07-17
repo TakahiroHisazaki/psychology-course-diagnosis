@@ -1894,6 +1894,123 @@ body {
     }
 }
 
+
+/* =========================================================
+   タイトル・見出し・教示文・質問文をさらに一段階縮小
+   ========================================================= */
+
+/* 英字の小見出し */
+.hero-kicker {
+    font-size: 0.82rem !important;
+    padding: 7px 16px !important;
+}
+
+/* Webアプリのメインタイトル */
+.hero h1 {
+    font-size: clamp(1.72rem, 4.2vw, 2.62rem) !important;
+    line-height: 1.3 !important;
+}
+
+/* タイトル下の導入・教示文 */
+.hero p {
+    font-size: clamp(0.98rem, 1.95vw, 1.12rem) !important;
+    line-height: 1.8 !important;
+}
+
+/* 「あなたにぴったりのコースが見つかります」 */
+.hero p strong {
+    font-size: 1rem !important;
+    padding: 5px 13px !important;
+}
+
+/* 質問前の見出し */
+.section-lead h2 {
+    font-size: clamp(1.25rem, 2.6vw, 1.58rem) !important;
+    line-height: 1.42 !important;
+}
+
+/* 質問前の教示文 */
+.section-lead p {
+    font-size: clamp(0.96rem, 1.85vw, 1.08rem) !important;
+    line-height: 1.68 !important;
+}
+
+/* 診断方法の教示文 */
+.section-lead .diagnosis-guide {
+    font-size: 0.97rem !important;
+    line-height: 1.6 !important;
+    padding: 9px 15px !important;
+}
+
+/* Q1～Q4 */
+.question-number {
+    min-width: 62px !important;
+    min-height: 41px !important;
+    padding: 2px 12px !important;
+    font-size: 1.08rem !important;
+}
+
+/* 各質問文 */
+.question-text {
+    font-size: clamp(1.07rem, 2.15vw, 1.22rem) !important;
+    line-height: 1.52 !important;
+}
+
+/* タイトル・教示部分の余白も少し圧縮 */
+.hero {
+    padding-top: 40px !important;
+    padding-bottom: 36px !important;
+}
+
+.section-lead {
+    padding-top: 21px !important;
+    padding-bottom: 21px !important;
+}
+
+/* スマートフォン表示 */
+@media (max-width: 520px) {
+    .hero-kicker {
+        font-size: 0.76rem !important;
+    }
+
+    .hero h1 {
+        font-size: clamp(1.58rem, 7.4vw, 2.05rem) !important;
+    }
+
+    .hero p {
+        font-size: 0.94rem !important;
+        line-height: 1.72 !important;
+    }
+
+    .hero p strong {
+        font-size: 0.96rem !important;
+    }
+
+    .section-lead h2 {
+        font-size: 1.23rem !important;
+    }
+
+    .section-lead p {
+        font-size: 0.94rem !important;
+    }
+
+    .section-lead .diagnosis-guide {
+        font-size: 0.92rem !important;
+    }
+
+    .question-number {
+        min-width: 55px !important;
+        min-height: 38px !important;
+        padding: 1px 10px !important;
+        font-size: 1rem !important;
+    }
+
+    .question-text {
+        font-size: 1.04rem !important;
+        line-height: 1.48 !important;
+    }
+}
+
 """
 
 
