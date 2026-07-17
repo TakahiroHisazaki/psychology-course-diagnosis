@@ -2011,6 +2011,332 @@ body {
     }
 }
 
+
+/* =========================================================
+   問題選択肢以外の文字サイズを全体的に縮小
+   ※回答選択肢（.question-card label 内）は変更しない
+   ========================================================= */
+
+/* アプリ全体の基準文字サイズ */
+html {
+    font-size: 16px !important;
+}
+
+.gradio-container {
+    font-size: 0.98rem !important;
+    line-height: 1.68 !important;
+}
+
+/* タイトル領域 */
+.hero-kicker {
+    font-size: 0.72rem !important;
+    padding: 6px 14px !important;
+}
+
+.hero h1 {
+    font-size: clamp(1.48rem, 3.7vw, 2.25rem) !important;
+    line-height: 1.28 !important;
+}
+
+.hero p {
+    font-size: clamp(0.88rem, 1.7vw, 1rem) !important;
+    line-height: 1.72 !important;
+}
+
+.hero p strong {
+    font-size: 0.9rem !important;
+    padding: 4px 11px !important;
+}
+
+/* 上部コースカード */
+.mini-icon {
+    font-size: 2.15rem !important;
+}
+
+.mini-code {
+    min-width: 38px !important;
+    padding: 3px 11px !important;
+    font-size: 0.94rem !important;
+}
+
+.mini-title {
+    font-size: 1rem !important;
+    line-height: 1.42 !important;
+}
+
+/* 教示・見出し */
+.section-lead h2 {
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem) !important;
+    line-height: 1.4 !important;
+}
+
+.section-lead p {
+    font-size: clamp(0.87rem, 1.55vw, 0.98rem) !important;
+    line-height: 1.62 !important;
+}
+
+.section-lead .diagnosis-guide {
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+    padding: 8px 13px !important;
+}
+
+/* Q番号・質問文 */
+.question-number {
+    min-width: 56px !important;
+    min-height: 37px !important;
+    padding: 1px 10px !important;
+    font-size: 0.96rem !important;
+}
+
+.question-text {
+    font-size: clamp(0.98rem, 1.9vw, 1.1rem) !important;
+    line-height: 1.48 !important;
+}
+
+/*
+問題選択肢の文字サイズはここで明示的に維持する。
+既存の最終設定値をそのまま適用。
+*/
+.question-card label,
+.question-card label span,
+.question-card label p {
+    font-size: 1.19rem !important;
+    line-height: 1.78 !important;
+}
+
+/* 操作ボタン */
+#diagnose-btn,
+#diagnose-btn * {
+    font-size: 1.08rem !important;
+}
+
+#reset-btn,
+#reset-btn * {
+    font-size: 1.04rem !important;
+}
+
+/* 未回答メッセージ */
+.notice-icon {
+    font-size: 2.1rem !important;
+}
+
+.notice h3 {
+    font-size: 1.12rem !important;
+}
+
+.notice p {
+    font-size: 0.94rem !important;
+}
+
+/* 診断結果見出し */
+.result-heading > span {
+    font-size: 2.45rem !important;
+}
+
+.result-heading p {
+    font-size: 0.78rem !important;
+}
+
+.result-heading h1 {
+    font-size: clamp(1.45rem, 3.4vw, 2rem) !important;
+    line-height: 1.3 !important;
+}
+
+.tie-message {
+    font-size: 0.94rem !important;
+    line-height: 1.62 !important;
+}
+
+/* 診断結果カード */
+.result-ribbon {
+    font-size: 0.88rem !important;
+    padding: 6px 13px !important;
+}
+
+.result-icon {
+    width: 68px !important;
+    height: 68px !important;
+    font-size: 2.25rem !important;
+}
+
+.result-code {
+    font-size: 0.8rem !important;
+}
+
+.result-card h2 {
+    font-size: clamp(1.55rem, 3.7vw, 2.2rem) !important;
+    line-height: 1.28 !important;
+}
+
+.result-headline {
+    font-size: 1.02rem !important;
+    line-height: 1.45 !important;
+}
+
+.result-type {
+    font-size: 1rem !important;
+    padding: 9px 14px !important;
+}
+
+.result-card p {
+    font-size: 0.98rem !important;
+    line-height: 1.78 !important;
+}
+
+.career-box {
+    font-size: 0.96rem !important;
+    line-height: 1.72 !important;
+}
+
+.career-box strong {
+    font-size: 1rem !important;
+}
+
+.result-score {
+    font-size: 1.02rem !important;
+}
+
+/* 回答バランス */
+.score-section h3 {
+    font-size: 1.28rem !important;
+}
+
+.score-letter {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1.08rem !important;
+}
+
+.score-number {
+    font-size: 1.38rem !important;
+}
+
+.score-course {
+    font-size: 0.88rem !important;
+    line-height: 1.32 !important;
+}
+
+/* 注意書き・フッター */
+.disclaimer {
+    font-size: 0.88rem !important;
+    line-height: 1.62 !important;
+}
+
+.footer-note {
+    font-size: 0.92rem !important;
+    line-height: 1.65 !important;
+}
+
+/* 装飾絵文字も少し縮小 */
+.hero::before,
+.hero::after {
+    font-size: clamp(2.2rem, 5vw, 3.6rem) !important;
+}
+
+.section-lead::before {
+    font-size: 2.1rem !important;
+}
+
+.section-lead::after {
+    font-size: 1.5rem !important;
+}
+
+.question-card::before {
+    font-size: 1.9rem !important;
+}
+
+.result-card::before {
+    font-size: 1.65rem !important;
+}
+
+/* スマートフォン表示 */
+@media (max-width: 520px) {
+    html {
+        font-size: 15px !important;
+    }
+
+    .hero-kicker {
+        font-size: 0.68rem !important;
+    }
+
+    .hero h1 {
+        font-size: clamp(1.38rem, 6.6vw, 1.82rem) !important;
+    }
+
+    .hero p {
+        font-size: 0.84rem !important;
+    }
+
+    .hero p strong {
+        font-size: 0.87rem !important;
+    }
+
+    .mini-title {
+        font-size: 0.94rem !important;
+    }
+
+    .section-lead h2 {
+        font-size: 1.08rem !important;
+    }
+
+    .section-lead p,
+    .section-lead .diagnosis-guide {
+        font-size: 0.84rem !important;
+    }
+
+    .question-number {
+        min-width: 50px !important;
+        min-height: 34px !important;
+        font-size: 0.9rem !important;
+    }
+
+    .question-text {
+        font-size: 0.96rem !important;
+    }
+
+    /* 問題選択肢はスマートフォンでも維持 */
+    .question-card label,
+    .question-card label span,
+    .question-card label p {
+        font-size: 1.19rem !important;
+        line-height: 1.72 !important;
+    }
+
+    #diagnose-btn,
+    #diagnose-btn *,
+    #reset-btn,
+    #reset-btn * {
+        font-size: 1rem !important;
+    }
+
+    .result-heading h1 {
+        font-size: 1.38rem !important;
+    }
+
+    .result-card h2 {
+        font-size: 1.55rem !important;
+    }
+
+    .result-headline,
+    .result-type,
+    .result-card p,
+    .career-box,
+    .result-score {
+        font-size: 0.92rem !important;
+    }
+
+    .score-section h3 {
+        font-size: 1.16rem !important;
+    }
+
+    .score-course,
+    .disclaimer,
+    .footer-note {
+        font-size: 0.82rem !important;
+    }
+}
+
 """
 
 
