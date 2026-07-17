@@ -1801,6 +1801,99 @@ body {
     }
 }
 
+
+/* =========================================================
+   タイトル・見出し・教示文・質問文の文字サイズ調整
+   ========================================================= */
+
+/* 英字の小見出し */
+.hero-kicker {
+    font-size: 0.9rem !important;
+}
+
+/* Webアプリのメインタイトル */
+.hero h1 {
+    font-size: clamp(1.95rem, 4.8vw, 3rem) !important;
+    line-height: 1.3 !important;
+}
+
+/* タイトル下の導入・教示文 */
+.hero p {
+    font-size: clamp(1.05rem, 2.2vw, 1.22rem) !important;
+    line-height: 1.85 !important;
+}
+
+/* 「あなたにぴったりのコースが見つかります」 */
+.hero p strong {
+    font-size: 1.1rem !important;
+}
+
+/* 質問前の見出し */
+.section-lead h2 {
+    font-size: clamp(1.42rem, 3vw, 1.8rem) !important;
+    line-height: 1.45 !important;
+}
+
+/* 質問前の教示文 */
+.section-lead p {
+    font-size: clamp(1.03rem, 2.1vw, 1.18rem) !important;
+    line-height: 1.72 !important;
+}
+
+/* 診断方法の教示文 */
+.section-lead .diagnosis-guide {
+    font-size: 1.05rem !important;
+    line-height: 1.65 !important;
+}
+
+/* Q1～Q4 */
+.question-number {
+    min-width: 68px !important;
+    min-height: 45px !important;
+    padding: 2px 14px !important;
+    font-size: 1.22rem !important;
+}
+
+/* 各質問文 */
+.question-text {
+    font-size: clamp(1.17rem, 2.45vw, 1.35rem) !important;
+    line-height: 1.55 !important;
+}
+
+/* スマートフォン表示 */
+@media (max-width: 520px) {
+    .hero h1 {
+        font-size: clamp(1.8rem, 8.3vw, 2.35rem) !important;
+    }
+
+    .hero p {
+        font-size: 1.02rem !important;
+    }
+
+    .hero p strong {
+        font-size: 1.05rem !important;
+    }
+
+    .section-lead h2 {
+        font-size: 1.38rem !important;
+    }
+
+    .section-lead p,
+    .section-lead .diagnosis-guide {
+        font-size: 1rem !important;
+    }
+
+    .question-number {
+        min-width: 59px !important;
+        min-height: 41px !important;
+        font-size: 1.1rem !important;
+    }
+
+    .question-text {
+        font-size: 1.14rem !important;
+    }
+}
+
 """
 
 
