@@ -2504,7 +2504,7 @@ with gr.Blocks(
         """
         <header class="hero">
             <div class="hero-kicker">4 QUESTIONS · COURSE FINDER</div>
-            <h1>🧭 心理臨床学科<br>学びのコンパス</h1>
+            <h1>🧭 心理臨床学科<br>　学びのコンパス</h1>
             <p>
                 「誰かの力になりたい」「心や社会の仕組みを知りたい」<br>
                 ……そんなあなたの未来の姿をのぞいてみませんか？<br>
